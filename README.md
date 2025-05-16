@@ -1,4 +1,4 @@
-# Color Sensor and Motor Control System
+# RGB-Sort-O-Matic
 
 ## 📌 Project Overview
 This project is a Verilog-based Color Sensor and Motor Control System designed for hardware automation. It features a color detection system and motor control using Verilog HDL.
