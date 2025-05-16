@@ -1,25 +1,43 @@
 # RGB-Sort-O-Matic
 
 ## 📌 Project Overview
-This project is a Verilog-based Color Sensor and Motor Control System designed for hardware automation. It features a color detection system and motor control using Verilog HDL.
+RGB-Sort-O-Matic is a Verilog-based color detection and sorting system designed for hardware automation using FPGA. This project was developed as part of the Hardware Design and Lab course at National Tsing Hua University (NTHU), under the guidance of Prof. Chun-Yi Lee. The system detects red, green, and blue objects using a color sensor and sorts them using a conveyor belt controlled by DC motors.
 
-## 🚀 Project Files
-- **color_sensor.v:** Verilog module for color detection using a color sensor.  
-- **color_test.v:** Testbench for verifying color sensor functionality.  
-- **motor.v:** Verilog module for motor control.  
-- **servo.v:** Verilog module for servo motor control.  
-- **top.v:** Top module integrating the color sensor and motor control.
+## 🚀 Project Motivation
+We developed this project to explore FPGA-based control for color detection and motor control. Unlike many existing projects that rely on Arduino, we aimed to implement the color sensor directly using Verilog on an FPGA (Basys3). Our goal was to create a fully FPGA-based system, including motor control without external microcontrollers.
 
-## ⚡ How It Works
-- The **color sensor module** detects specific colors and triggers actions based on the detected color.  
-- The **motor module** controls the movement of the motor, while the **servo module** adjusts the angle of the servo motor.  
-- The **top module** integrates all components, enabling a complete color detection and motor control system.  
+## ⚡ System Architecture
+* **Color Sensor Module:** Detects colors (red, green, blue) using the TCS3200 color sensor, processed on the FPGA. The sensor’s frequency output is used to determine the dominant color.
+* **Conveyor Belt System:** Driven by two DC motors controlled through PWM, allowing precise speed control.
+* **Seat Belt Mechanism:** Ensures the objects remain steady for accurate color detection.
+* **User Preferences:** Switches (SW0, SW1, SW2) allow users to set preferred colors for sorting.
 
-## 🌐 Technology Stack
-- Verilog HDL  
-- FPGA Development (Basys 3 Board Recommended)  
+## 🌐 How It Works
+* Objects move toward the color sensor on the conveyor belt.
+* The color sensor detects the color of the object.
+* User preferences determine which colors are considered "desirable."
+* The system activates LEDs to indicate whether the detected color is desirable.
+* The conveyor belt directs the object to the appropriate location based on the color.
+
+## 📊 Experimental Results
+* The system accurately detected colors with minor sensitivity to environmental lighting.
+* The DC motors operated smoothly, maintaining a consistent belt speed.
+* The FPGA utilized efficient resource management, running both the color sensor and motor control modules.
+
+## 📌 Lessons Learned
+* The color sensor is highly sensitive to surrounding light, requiring careful calibration.
+* Motor control using PWM was challenging but provided precise control.
+* We gained a deeper understanding of FPGA pin configuration, especially for motor and sensor control.
+
+## 🚀 Future Improvements
+* Replace the color sensor with a more precise model for improved accuracy.
+* Use a larger conveyor belt for smoother object handling.
+* Implement an advanced calibration method to adapt to different lighting conditions.
+
+## 📄 License
+This project is licensed under the MIT License.
 
 ## 📝 How to Use
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/your-username/Color-Sensor-Motor-Control.git
+   git clone https://github.com/your-username/RGB-Sort-O-Matic.git
